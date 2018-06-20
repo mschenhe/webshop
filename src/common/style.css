@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('./fonts/icomoon.eot?kz9o77');
+  src:  url('./fonts/icomoon.eot?kz9o77#iefix') format('embedded-opentype'),
+    url('./fonts/icomoon.ttf?kz9o77') format('truetype'),
+    url('./fonts/icomoon.woff?kz9o77') format('woff'),
+    url('./fonts/icomoon.svg?kz9o77#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-account:before {
+  content: "\e903";
+}
+.icon-more:before {
+  content: "\e902";
+  color: #bfbfbf;
+}
+.icon-关闭:before {
+  content: "\e905";
+  color: #515151;
+}
+.icon-wxb定位:before {
+  content: "\e904";
+  color: #515151;
+}
+.icon-back:before {
+  content: "\e900";
+}
+.icon-cart2:before {
+  content: "\e901";
+  color: #8a8a8a;
+}
