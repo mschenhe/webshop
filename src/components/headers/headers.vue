@@ -1,9 +1,9 @@
 <template>
 <div id="header">
   <div id="cart">
-    <i class="icon-account" @click="person()"></i>
     <i class="icon-cart2"  @click="shopcart()"></i>
-    
+    <i class="icon-account" @click="person()"></i>
+    <span>{{user.name}}</span>
   </div>
   
 <router-link to="login" class="weui-btn weui_btn_mini weui-btn_primary" id="login">{{this.logins}}</router-link>
@@ -15,11 +15,14 @@ export default {
   data() {
     return {
       logins:'登录',
+      user:[]
     };
   },
   created(){
     this.logins = localStorage.getItem("login");
     console.log(this.logins);
+    this.user = JSON.parse(localStorage.getItem("user"));
+    console.log(this.user);
     if(this.logins === null || this.logins === ""){
       this.logins = "登录";
       document.getElementById("register").style.display = "block";

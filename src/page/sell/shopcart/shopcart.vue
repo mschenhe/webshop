@@ -59,9 +59,9 @@
   </div>-->
   <div class="weui_btn weui_btn_mini weui-btn_primary" style="width:20%;position:absolute;left:5%;top:10px;border-radius:5px;background:red;color:#fff;" v-if="this.flag2" @click="cancelAll()">取消全选</div>
   <div class="weui_btn weui_btn_mini weui-btn_primary" style="width:20%;position:absolute;left:5%;top:50px;border-radius:5px;color:#fff;" @click="allGoods()">全选</div>
-  <div id="jie-amount">
+  <!--<div id="jie-amount">
     <span><span style="color:#fff;">总金额:</span><span style="color:red;">￥{{amount}}</span></span>
-  </div>
+  </div>-->
   <div class="weui_btn weui_btn_mini weui-btn_primary" style="background:#ff9966;width:20%;position:absolute;right:5%;height:30px;top:50px;border-radius:5px;" @click="jiesuan()">
     <span style="display:block;margin-top:2px;">结算</span>
     </div>
@@ -109,6 +109,7 @@ export default {
       totalAmount: 0.0
     };
     console.log(this.lists);
+    localStorage.removeItem("goodslist");
     //localStorage.setItem("goodslist", JSON.stringify(this.lists));
     this.goodslist = this.lists.goodslist;
   },

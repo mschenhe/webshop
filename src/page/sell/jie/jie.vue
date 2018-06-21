@@ -6,7 +6,9 @@
             <div style="font-size:32px;color:#fff;" @click="back()"><i class="icon-back"></i></div>
             <!--<div style="margin-top:-40px;left:10px;">确定订单</div>--></div>
     </div>
+    
 <div id="jie-name" @click="changeAD()">
+    <i class="icon-wxb定位" style="position:absolute;left:0;font-size:32px;top:25%;"></i>
     <span id="j-name">收货人：陈菏</span>
     <span id="j-phone">12345678910</span>
     <span id="j-ad">收货地址:<span>湖南省湘潭市雨湖区和平街道湖南科技大学北校</span></span>
@@ -116,7 +118,11 @@ export default {
     this.totalAmount = JSON.parse(
       localStorage.getItem("goodslist")
     ).totalAmount;
-    this.goodslist.splice(0, 1);
+    console.log(JSON.parse(localStorage.getItem("goodslist")));
+    if(this.goodslist[0].count === 0){
+      this.goodslist.splice(0, 1);
+    }
+    //
     console.log(this.goodslist);
     //console.log(typeof(JSON.parse(localStorage.getItem("goodslist")).totalAmount));
   },
@@ -261,24 +267,24 @@ export default {
   display: inline-block;
   position: absolute;
   left: 5%;
-  margin-top: 10px;
+  margin-top: 1%;
 }
 #con-img {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 20%;
+  height: 50%;
   left: 5%;
-  margin-top: 50px;
+  margin-top: 5%;
 }
 #con-img img {
-  widows: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
 }
 #con-name {
   display: inline-block;
   position: absolute;
-  margin-top: 50px;
-  left:20%;;
+  margin-top: 5%;
+  left:30%;;
 }
 #con-name span {
   font-size: 14px;
@@ -287,8 +293,8 @@ export default {
 #con-price {
   display: inline-block;
   position: absolute;
-  margin-top: 130px;
-  left:20%;;
+  margin-top: 15%;
+  left:30%;;
 }
 #con-price span {
   font-size: 14px;
@@ -297,8 +303,8 @@ export default {
 #con-num {
   display: inline-block;
   position: absolute;
-  margin-top: 70px;
- left:20%;;
+  margin-top: 10%;
+ left:30%;;
 }
 #con-num span {
   font-size: 12px;
@@ -306,8 +312,8 @@ export default {
 #con-gui {
   display: inline-block;
   position: absolute;
-  margin-top: 100px;
-  left:20%;;
+  margin-top: 10%;
+  left:40%;;
 }
 #con-gui #gui {
   font-size: 15px;
@@ -317,7 +323,7 @@ export default {
   display: inline-block;
   position: absolute;
   right: 10px;
-  margin-top: 130px;
+  margin-top: 15%;
 }
 
 /*#attention {

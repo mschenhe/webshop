@@ -35,7 +35,8 @@ export default {
       stock: 0,
       showFlag: false,
       flag: false,
-      orderData: []
+      orderData: [],
+      goodslist: []
     };
   },
   props: {
@@ -48,7 +49,40 @@ export default {
     console.log(this.goods);
   },
   methods: {
-    jiesuan() {},
+    jiesuan() {
+      //console.log(this.goods);
+      if(!this.goods.count){
+        Vue.set(this.goods,'count',1);
+      }
+      this.$emit('add',event.target);
+      console.log(this.goods);
+      //this.goodslist = JSON.parse(localStorage.getItem("goodslist"));
+      localStorage.removeItem("goodslist");
+      //console.log(this.goodslist);
+      this.goodslist = {
+        goodslist: 
+          [{
+            id: "商品编号"+this.goods.id,
+            img: this.goods.img,
+            name: this.goods.name,
+            price: "￥"+this.goods.price,
+            gui: "规格"+this.goods.gui,
+            count: this.goods.count
+          }],
+        totalNumber: parseInt(this.goods.count),
+        totalAmount: parseInt(this.goods.count) * parseFloat(this.goods.price.replace("￥",""))
+      };
+      //console.log(this.goodslist);
+      localStorage.setItem("goodslist", JSON.stringify(this.goodslist));
+      console.log(JSON.parse(localStorage.getItem("goodslist")));
+      this.$router.push({'name':'jie'});
+
+      //console.log(this.goodslist);
+      //console.log(this.goodslist);
+      /*if(this.shoplist === null || this.shoplist === ""){
+
+      }*/
+    },
     confirm() {
       if (this.flag === false) {
         alert("请先选择商品规格");

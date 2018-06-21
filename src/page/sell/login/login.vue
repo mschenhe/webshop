@@ -109,8 +109,6 @@ export default {
               //console.log(user);
               localStorage.setItem("user",JSON.stringify(user));
               localStorage.setItem("login","登出");
-              console.log(localStorage.getItem("login"));
-              
               window.location.href="http://localhost:8080/home";
               db.close();
             }

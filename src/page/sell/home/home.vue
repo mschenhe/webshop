@@ -16,6 +16,7 @@ import api from "../../../mock.js";
 import axios from "axios";
 //import head from '../../components/head/head.vue'
 import list from "../../../components/list/list.vue";
+import listDetail from "../../../components/list/listDetail.vue";
 import listPic from '../../../components/pic/listPic.vue';
 import headers from '../../../components/headers/headers.vue';
 export default {
@@ -42,7 +43,8 @@ export default {
     pic,
     headers,
     list,
-    listPic
+    listPic,
+    listDetail
   }
 };
 </script>

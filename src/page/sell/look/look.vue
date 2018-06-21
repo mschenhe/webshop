@@ -1,7 +1,7 @@
 <template>
     <div id="look">
         <div id="look-top">
-            <i class="icon-back" style="font-size:32px;position:fixed;left:0;top:2%;" @click="back()"></i>
+            <i class="icon-back" style="font-size:32px;position:absolute;left:0;margin-top:2%;" @click="back()"></i>
             <span style="display:inline-block;position:absolute;left:10%;top:2%;">订单详情</span>
         </div>
         <div id="look-ad">
@@ -58,7 +58,10 @@ export default {
         this.adList = JSON.parse(localStorage.getItem("adList"));
         //console.log(this.adList);
         this.goodslist = JSON.parse(localStorage.getItem("goodslist")).goodslist;
-        this.goodslist.splice(0,1); 
+        if(parseInt(this.goodslist[0].count === 0)){
+            this.goodslist.splice(0,1);
+        }
+         
         console.log(this.goodslist);
     },
     methods:{
